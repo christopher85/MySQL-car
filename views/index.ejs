@@ -1,0 +1,38 @@
+<%- include("./partials/header") %> 
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <% cars.forEach(function(cars) {%>
+
+
+
+                <div class="card" style="width: 18rem;">
+                    <img src="<%= cars.photo %>" class="card-img-top" alt="...">
+                    <div class="card-body" style="text-align: center;">
+
+                            <h5 class="card-title"><%= cars.Constructeur %></h5>
+                            <h5 class="card-title"> <%= cars.modèle %> </h5>
+                            <h5 class="card-title"> <%= cars.année %> </h5>
+                            <h5 class="card-title"> <%= cars.carburant %> </h5>
+                            <h5 class="card-title"> <%= cars.prix %> € </h5>
+                        <div style="display: flex; ">
+                            <a href="/cars/<%= cars.id %>" class="btn btn-primary">Fiche véhicule</a>
+                            <a href="" class="btn btn-danger" style="margin-left: 10px;">Supprimer l'annonce</a>
+                        </div>
+
+                        </div>
+                  </div>
+                
+
+            <%});%>
+            
+        </div>
+    </div>
+</div>
+
+
+
+<%- include("./partials/footer") %> 

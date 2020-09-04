@@ -1,0 +1,27 @@
+<%- include("./partials/header") %> 
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div class="card" style="width: 18rem;">
+        
+                <img src="<%= cars.photo %>" class="card-img-top" alt="...">
+        
+                <div class="card-body">
+                    <h5 class="card-title"><%= cars.Constructeur %></h5>
+                    <h5 class="card-title"> <%= cars.modèle %> </h5>
+                    <h5 class="card-title"> <%= cars.année %> </h5>
+                    <h5 class="card-title"> <%= cars.carburant %> </h5>
+                    <h5 class="card-title"> <%= cars.prix %> </h5>
+                    <a href="/cars/update/<%= cars.id %> " class="btn btn-success" style="margin-left: 10px;">Modifier l'annonce</a>
+                </div>
+        
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<%- include("./partials/footer") %>
