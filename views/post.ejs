@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-md-12">
 
-            <form method="POST" action="/cars/update/<%= cars.id %>?_method=PUT">
+            <form method="POST" action="/cars/post">
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Modèle</label>
-                  <input type="text" class="form-control" value="<%= cars.modèle %> " name="modele">
+                  <input type="text" class="form-control"  name="modele">
                 </div>
                 <div class="form-group">
                   <label for="exampleFormControlSelect1">Constructeur</label>
@@ -34,15 +34,15 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Prix</label>
-                    <input type="text" class="form-control" value="<%= cars.prix %> " name="prix" >
+                    <input type="text" class="form-control" name="prix" >
                   </div>
 
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Année</label>
-                    <input type="text" class="form-control" value="<%= cars.année %> " name="annee" >
+                    <input type="text" class="form-control"  name="annee" >
                   </div>
 
-                  <button type="submit" class="btn btn-success">Valider la modification</button>
+                  <button type="submit" class="btn btn-success">Ajouter la fiche</button>
 
               </form>
 

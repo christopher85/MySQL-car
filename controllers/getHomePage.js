@@ -11,5 +11,49 @@ module.exports = {
             // console.log(result);
         })
             
+    },
+   
+        getAddCars:(req,res)=>{
+
+            const cars =[
+                "SELECT * FROM factories"
+                ,   
+                "SELECT * FROM energies"   
+            ]  
+                
+            db.query(cars.join(';'), (err, result) =>{
+                if(err){
+                    res.status(500).send(err)
+                }
+                    //res.json(result)
+                    res.render('update', {
+                        cars: result[0][0],
+                        factories: result[1],
+                        energies: result[2]
+                    })
+                    // console.log(result);
+            })
+
+    },
+    
+
+    addCars: (req, res) =>{
+
+        const modele = req.body.modele
+        const constructeur = req.body.constructeur
+        const carburant = req.body.carburant
+        const annee = req.body.annee
+        const prix = req.body.prix
+        const image = req.body.image
+
+        const cars = "INSERT INTO cars (name, factoryId, years, price, energyId, image)\
+        VALUES (?, ?, ?, ?, ?, ? );"
+
+        db.query(cars,[modele, constructeur,annee , prix, carburant, image], (err, result) =>{
+            if(err){
+                res.status(500).send(err)
+            }
+                res.json(result)
+        })
     }
 }

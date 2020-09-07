@@ -43,14 +43,17 @@ global.db = db;
 
 //controllers
 ///////////////
-const { getHomePage } = require("./controllers/getHomePage")
-const { getSingleCar, getUpdateCars} = require("./controllers/getSingleCar")
+const { getHomePage , getAddCars, addCars } = require("./controllers/getHomePage")
+const { getSingleCar, getUpdateCars, updateCar} = require("./controllers/getSingleCar")
 
 
 app.get("/", getHomePage)
 
 app.get("/cars/:id", getSingleCar)
+app.get("/cars/post", getAddCars)
+app.post("/cars/post", addCars)
 app.get("/cars/update/:id", getUpdateCars)
+app.put("/cars/update/:id", updateCar)
 
 
 
